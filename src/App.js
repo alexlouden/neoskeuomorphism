@@ -1,5 +1,14 @@
 import React from 'react'
-import { ThemeProvider, Grid, Flex, Box, Text, Button, Input } from 'theme-ui'
+import {
+  ThemeProvider,
+  Grid,
+  Flex,
+  Box,
+  Text,
+  Button,
+  Input,
+  useThemeUI
+} from 'theme-ui'
 import {
   ChevronRight,
   ChevronLeft,
@@ -14,20 +23,24 @@ import Dot from './Dot'
 import theme from './theme'
 import Switch from './Switch'
 
-const BigButton = () => (
-  <Button variant="bigsquare" sx={{ gridArea: 'span 2' }}>
-    <Text
-      sx={{
-        fontSize: 54,
-        background: 'linear-gradient(90deg, blue, aqua)',
-        WebkitBackgroundClip: 'text',
-        WebkitTextFillColor: 'transparent'
-      }}
-    >
-      Aa
-    </Text>
-  </Button>
-)
+const BigButton = () => {
+  const { theme } = useThemeUI()
+
+  return (
+    <Button variant="bigsquare" sx={{ gridArea: 'span 2' }}>
+      <Text
+        sx={{
+          fontSize: 54,
+          background: `linear-gradient(90deg, ${theme.colors.primary}, ${theme.colors.secondary})`,
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent'
+        }}
+      >
+        Aa
+      </Text>
+    </Button>
+  )
+}
 
 const LeftButton = () => (
   <Button variant="square">

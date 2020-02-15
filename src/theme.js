@@ -123,7 +123,11 @@ const input = {
   borderRadius: 'pill',
   border: 'none',
   boxShadow: shadow(-3),
-  textAlign: 'center'
+  textAlign: 'center',
+  '&::selection': {
+    backgroundColor: 'primary',
+    color: 'white'
+  }
 }
 
 ////////////////////////////////////////
