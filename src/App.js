@@ -1,6 +1,15 @@
 import React from 'react'
 import { ThemeProvider, Grid, Flex, Box, Text, Button, Input } from 'theme-ui'
-import { ChevronRight, ChevronLeft, Circle, Search } from 'react-feather'
+import {
+  ChevronRight,
+  ChevronLeft,
+  ChevronDown,
+  Circle,
+  Search,
+  UserPlus,
+  Share2,
+  MapPin
+} from 'react-feather'
 import Dot from './Dot'
 import theme from './theme'
 
@@ -43,6 +52,34 @@ const DotButton = () => (
   </Button>
 )
 
+const ShareButton = () => (
+  <Button>
+    <span>Share</span>
+    <Share2 size={20} />
+  </Button>
+)
+
+const PinButton = () => (
+  <Button>
+    <MapPin size={20} />
+    <span>Label</span>
+  </Button>
+)
+
+const AddUserButton = () => (
+  <Button>
+    <UserPlus size={22} />
+    <span>Add User</span>
+  </Button>
+)
+
+const Dropdown = () => (
+  <Button sx={{ justifyContent: 'space-around' }}>
+    <span>Dropdown</span>
+    <ChevronDown size={20} />
+  </Button>
+)
+
 const SearchInput = () => (
   <Box
     sx={{
@@ -52,7 +89,7 @@ const SearchInput = () => (
       // fixme: not sure why this is necessary with border-box
     }}
   >
-    <Input defaultValue="Search for ..." variant="search" sx={{ mx: 0 }} />
+    <Input placeholder="Search for ..." variant="search" sx={{ mx: 0 }} />
     <Flex
       sx={{
         position: 'absolute',
@@ -91,13 +128,13 @@ export default () => (
       <div>Switch</div>
 
       {/* Third row */}
-      <Button>Share</Button>
-      <Button>Dropdown</Button>
+      <ShareButton />
+      <Dropdown />
       <Box sx={{ gridArea: 'span 3 / span 3', border: '1px solid blue' }} />
 
       {/* Fourth row */}
-      <Button>Label</Button>
-      <Button>Add User</Button>
+      <PinButton />
+      <AddUserButton />
 
       {/* Fifth row */}
       <SearchInput />
