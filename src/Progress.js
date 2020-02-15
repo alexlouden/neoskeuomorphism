@@ -17,4 +17,5 @@ const Progress = ({ value = 0 }) => {
     </Box>
   )
 }
+
 export default Progress

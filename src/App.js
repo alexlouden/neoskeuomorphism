@@ -23,6 +23,7 @@ import Dot from './Dot'
 import theme from './theme'
 import Switch from './Switch'
 import Progress from './Progress'
+import Graph from './Graph'
 
 const BigButton = () => {
   const { theme } = useThemeUI()
@@ -145,9 +146,9 @@ export default () => (
       {/* Third row */}
       <ShareButton />
       <Dropdown />
-      <Box
-        sx={{ m: 3, gridArea: 'span 3 / span 3', border: '1px solid blue' }}
-      />
+      <Box sx={{ m: 3, gridArea: 'span 3 / span 3' }}>
+        <Graph />
+      </Box>
 
       {/* Fourth row */}
       <PinButton />
