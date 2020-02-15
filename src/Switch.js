@@ -17,7 +17,6 @@ const StyledSwitch = styled(BaseSwitch)`
 
 const Switch = ({ onChange, checked: checkedDefault = false }) => {
   const { theme } = useThemeUI()
-
   const [checked, setChecked] = useState(checkedDefault)
   return (
     <Flex p={3} pl={24}>

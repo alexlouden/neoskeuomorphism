@@ -22,6 +22,7 @@ import {
 import Dot from './Dot'
 import theme from './theme'
 import Switch from './Switch'
+import Progress from './Progress'
 
 const BigButton = () => {
   const { theme } = useThemeUI()
@@ -144,7 +145,9 @@ export default () => (
       {/* Third row */}
       <ShareButton />
       <Dropdown />
-      <Box sx={{ gridArea: 'span 3 / span 3', border: '1px solid blue' }} />
+      <Box
+        sx={{ m: 3, gridArea: 'span 3 / span 3', border: '1px solid blue' }}
+      />
 
       {/* Fourth row */}
       <PinButton />
@@ -152,6 +155,11 @@ export default () => (
 
       {/* Fifth row */}
       <SearchInput />
+
+      {/* Sixth row */}
+      <Box sx={{ gridArea: 'auto / span 5', p: 3, mt: 4 }}>
+        <Progress value={0.38} />
+      </Box>
     </Grid>
   </ThemeProvider>
 )
