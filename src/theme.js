@@ -1,6 +1,6 @@
 import { darken, lighten } from '@theme-ui/color'
 
-const shadow = (scale = 8) => {
+export const shadow = (scale = 8) => {
   const d = Math.abs((8 * scale) / 8)
   const blur = Math.abs((12 * scale) / 8)
   const spread = -Math.abs((2 * scale) / 8)

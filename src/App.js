@@ -12,6 +12,7 @@ import {
 } from 'react-feather'
 import Dot from './Dot'
 import theme from './theme'
+import Switch from './Switch'
 
 const BigButton = () => (
   <Button variant="bigsquare" sx={{ gridArea: 'span 2' }}>
@@ -19,8 +20,8 @@ const BigButton = () => (
       sx={{
         fontSize: 54,
         background: 'linear-gradient(90deg, blue, aqua)',
-        '-webkit-background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent'
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent'
       }}
     >
       Aa
@@ -74,9 +75,9 @@ const AddUserButton = () => (
 )
 
 const Dropdown = () => (
-  <Button sx={{ justifyContent: 'space-around' }}>
-    <span>Dropdown</span>
-    <ChevronDown size={20} />
+  <Button sx={{ justifyContent: 'space-between' }}>
+    <Text px={2}>Dropdown</Text>
+    <ChevronDown size={22} />
   </Button>
 )
 
@@ -119,13 +120,13 @@ export default () => (
       <Button>Button</Button>
       <LeftButton />
       <RightButton />
-      <div>Switch</div>
+      <Switch />
 
       {/* Second row */}
       <Input defaultValue="Input" />
       <CircleButton />
       <DotButton />
-      <div>Switch</div>
+      <Switch checked />
 
       {/* Third row */}
       <ShareButton />
