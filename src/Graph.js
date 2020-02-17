@@ -59,8 +59,8 @@ const Graph = ({ defaultValues = defaults }) => {
         if (!autoRefresh) generateNewData()
       }}
     >
-      {values.map(([val, height]) => (
-        <Column value={val} height={height} />
+      {values.map(([val, height], i) => (
+        <Column value={val} height={height} key={i} />
       ))}
     </Flex>
   )

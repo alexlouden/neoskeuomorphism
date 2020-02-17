@@ -1,4 +1,4 @@
-import { darken, lighten } from '@theme-ui/color'
+import { darken } from 'polished'
 
 export const shadow = (scale = 8) => {
   const d = Math.abs((8 * scale) / 8)
@@ -15,6 +15,9 @@ export const shadow = (scale = 8) => {
 // buttons
 const padding = 14
 
+const bgGradient = (c = 0, from = '#F1F1F3', to = '#E5E5EA') =>
+  `linear-gradient(90deg, ${darken(c, from)}, ${darken(c, to)})`
+
 const common = {
   display: 'flex',
   justifyContent: 'center',
@@ -22,7 +25,7 @@ const common = {
 
   fontWeight: 'body',
   color: 'text',
-  background: 'linear-gradient(90deg, #F1F1F3, #E5E5EA)',
+  background: bgGradient(),
   padding,
   margin: 14,
   fontSize: 2,
@@ -55,11 +58,11 @@ const primaryButton = {
   boxShadow: shadow(8),
   '&:hover': {
     boxShadow: shadow(5),
-    bg: darken('background', 0.01)
+    background: bgGradient(0.01)
   },
   '&:active': {
     boxShadow: shadow(-4),
-    bg: darken('background', 0.04),
+    background: bgGradient(0.04),
     // move text down
     paddingTop: padding + 2,
     paddingBottom: padding - 2
@@ -76,11 +79,11 @@ const squareButton = {
   boxShadow: shadow(6),
   '&:hover': {
     boxShadow: shadow(5),
-    bg: darken('background', 0.01)
+    background: bgGradient(0.01)
   },
   '&:active': {
     boxShadow: shadow(-3),
-    bg: darken('background', 0.04),
+    background: bgGradient(0.04),
 
     paddingTop: +1,
     paddingBottom: -1
@@ -104,11 +107,11 @@ const bigSquareButton = {
   boxShadow: shadow(8),
   '&:hover': {
     boxShadow: shadow(5),
-    bg: darken('background', 0.01)
+    background: bgGradient(0.01)
   },
   '&:active': {
     boxShadow: shadow(-4),
-    bg: darken('background', 0.04),
+    background: bgGradient(0.04),
     // move text down
     paddingTop: padding + 2,
     paddingBottom: padding - 2
