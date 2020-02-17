@@ -102,7 +102,7 @@ const SearchInput = () => (
     sx={{
       position: 'relative',
       gridArea: 'auto / span 2',
-      mx: 2
+      mx: 3
       // fixme: not sure why this is necessary with border-box
     }}
   >
