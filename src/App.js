@@ -7,6 +7,7 @@ import {
   Text,
   Button,
   Input,
+  Link,
   useThemeUI
 } from 'theme-ui'
 import {
@@ -122,45 +123,70 @@ const SearchInput = () => (
   </Box>
 )
 
+const Title = () => (
+  <Text sx={{ m: 4, gridArea: 'auto / span 5', textAlign: 'center' }}>
+    <Link
+      href="https://github.com/alexlouden/neoskeuomorphism"
+      sx={{ color: 'primary' }}
+    >
+      neoskeuomorphism
+    </Link>{' '}
+    - the react component library.
+    <br />
+    <Link
+      href="https://dribbble.com/shots/9527558-Freebie-Neumorphic-UX-UI-Elements"
+      sx={{ color: 'primary' }}
+    >
+      Design by MazePixel
+    </Link>
+  </Text>
+)
+
 export default () => (
   <ThemeProvider theme={theme}>
-    <Grid
-      m={4}
-      gap={0}
-      sx={{ display: 'inline-grid' }}
-      columns={[2, 'repeat(5, auto)']}
+    <Flex
+      sx={{ alignItems: 'center', justifyContent: 'center', minHeight: '90vh' }}
     >
-      {/* First row */}
-      <BigButton />
-      <Button>Button</Button>
-      <LeftButton />
-      <RightButton />
-      <Switch />
+      <Grid
+        m={4}
+        gap={0}
+        sx={{ display: 'inline-grid' }}
+        columns={[2, 'repeat(5, auto)']}
+      >
+        <Title />
 
-      {/* Second row */}
-      <Input defaultValue="Input" />
-      <CircleButton />
-      <DotButton />
-      <Switch checked />
+        {/* First row */}
+        <BigButton />
+        <Button>Button</Button>
+        <LeftButton />
+        <RightButton />
+        <Switch />
 
-      {/* Third row */}
-      <ShareButton />
-      <Dropdown />
-      <Box sx={{ m: 3, gridArea: 'span 3 / span 3' }}>
-        <Graph />
-      </Box>
+        {/* Second row */}
+        <Input defaultValue="Input" />
+        <CircleButton />
+        <DotButton />
+        <Switch checked />
 
-      {/* Fourth row */}
-      <PinButton />
-      <AddUserButton />
+        {/* Third row */}
+        <ShareButton />
+        <Dropdown />
+        <Box sx={{ m: 3, gridArea: 'span 3 / span 3' }}>
+          <Graph />
+        </Box>
 
-      {/* Fifth row */}
-      <SearchInput />
+        {/* Fourth row */}
+        <PinButton />
+        <AddUserButton />
 
-      {/* Sixth row */}
-      <Box sx={{ gridArea: 'auto / span 5', p: 3, mt: 4 }}>
-        <Progress value={0.38} />
-      </Box>
-    </Grid>
+        {/* Fifth row */}
+        <SearchInput />
+
+        {/* Sixth row */}
+        <Box sx={{ gridArea: 'auto / span 5', p: 3, mt: 4 }}>
+          <Progress value={0.38} />
+        </Box>
+      </Grid>
+    </Flex>
   </ThemeProvider>
 )
